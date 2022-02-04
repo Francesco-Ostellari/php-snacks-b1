@@ -52,7 +52,7 @@ Stampiamo in una pagina tutte le auto con Vue. -->
             </div>
             <div>
               <span>accessori: </span>
-              {{automobile.accessori}}
+              <div v-html="automobile.accessori"></div>
             </div>
             <div>
               <span>carburante: </span>
