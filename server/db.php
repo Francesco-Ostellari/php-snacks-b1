@@ -78,7 +78,7 @@ $automobili = [
     'immatricolazione' => 2011,
     'porte' => 5,
     'località' => "RM",
-    'immagine' => "https://img2.stcrm.it/images/24165087/HOR_STD/1000x/audi-a4-allroad-2020-01.jpg",
+    'immagine' => "https://www.fiat.it/content/dam/fiat/cross/models/panda-2020/opening/landscape/figurini/Panda-Model-page-Amore-Red-Car-Landscape-550x348.png",
   ],
   [
     'id' => 5,
