@@ -4,6 +4,9 @@ A partire dall'array realizzato stamattina, realizziamo una API che chiameremo c
 <!-- Milestone 2
 Stampiamo in una pagina tutte le auto con Vue. -->
 
+<!-- Milestone 3
+Inseriamo un sistema di filtraggio con Vue su un paio di campi a scelta! -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,16 +15,28 @@ Stampiamo in una pagina tutte le auto con Vue. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Automobili</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
   <!-- main -->
   <main id="app">
+    <h4>COLORE: </h4>
+    <select @change="colorCars()" name="color" id="color" v-model="filtroColore">
+      <option value="all">All</option>
+      <option value="grigio">Grigio</option>
+      <option value="rosso">Rosso</option>
+      <option value="nero">Nero</option>
+    </select>
+    <h4>TRASMISSIONE: </h4>
+    <select @change="colorCars()" name="trasmissione" id="trasmissione" v-model="filtroTrasmissione">
+      <option value="all">All</option>
+      <option value="automatico">Automatico</option>
+      <option value="manuale">Manuale</option>
+    </select>
     <div class="container">
       <div class="row">
-        <div class="col pb-3" v-for="automobile in automobili">
+        <div class="col pb-3" v-for="(automobile, index) in arrayFiltered">
           <div class="automobili">
             <div>
               <img :src="automobile.immagine" :alt="automobile.marca">
